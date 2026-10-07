@@ -4,6 +4,8 @@ package com.gabroliv.coursespring.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 @Entity
 @Table(name = "users")
@@ -15,6 +17,12 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String passord;
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 
     public User() {}
 
