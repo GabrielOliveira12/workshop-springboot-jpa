@@ -2,6 +2,7 @@ package com.gabroliv.coursespring.services;
 
 import com.gabroliv.coursespring.entities.Category;
 import com.gabroliv.coursespring.repositories.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.Optional;
 @Service
 public class CategoryService {
 
+    @Autowired
     private CategoryRepository repository;
 
     public List<Category> findAll() {
